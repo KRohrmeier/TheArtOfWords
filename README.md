@@ -29,7 +29,8 @@ story or poem.
 
 ### Project Technologies/Techniques
 
-Please note: __the following are *in progress* and projected!__
+Please note: __the following are *in progress* and anticipated but may change!__
+Changes will be reflected here when/if applicable.
 
 * Security/Authentication
   * Admin: can save and display word art to own account and to public site
