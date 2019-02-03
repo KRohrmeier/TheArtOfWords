@@ -21,7 +21,7 @@ work for publicity reasons, this application
 would allow them to easily create and use word art derived from
 their own work to liven up blog posts, create a vibrant background
 on a website or business card, or even create swag (book bags, posters, etc)
-in conjuntion with print-on-demand websites.
+in conjunction with print-on-demand websites.
 
 And last, but not least, word art can simply be a visual way to enjoy a
 story or poem.
