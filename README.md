@@ -1,6 +1,7 @@
 # The Art Of Words
 
-an individual project for Madison College's Enterprise Java Class
+My individual project for Madison College's Enterprise Java Class,
+Spring semester 2019.
 
 ## Problem Statement
 
@@ -28,6 +29,8 @@ story or poem.
 
 ### Project Technologies/Techniques
 
+Please note: __the following are *in progress* and projected!__
+
 * Security/Authentication
   * Admin: can save and display word art to own account and to public site
   * User: can save word art to their own accounts
@@ -35,7 +38,7 @@ story or poem.
 * Database
   * MySQL
   * Store users and roles
-  * Store all data for the words art
+  * Store all data for the word art
 * ORM Framework
   * *TBD*
 * Dependency Management
