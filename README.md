@@ -4,18 +4,27 @@ an individual project for Madison College's Enterprise Java Class
 
 ## Problem Statement
 
-Readers and authors alike need various ways to enjoy, appreciate, and analyze literary works.
+Readers and authors alike need various ways to enjoy, appreciate, and
+analyze literary works.
 
-Readers like to explore and appreciate their favorite reads - beyond reviewing books or talking
-about their favorite characters and scenes, readers might create and share in fan art. This
-application will allow them to easily create a word-oriented fan art to enjoy on
-their own and to share.
+Readers like to explore and appreciate their favorite reads - beyond
+reviewing books or talking about their favorite characters and scenes,
+readers might create and share fan art. This application will allow
+people to easily create a word-oriented fan art to enjoy and to share.
 
-Writers also benefit from new ways of looking at their literary works. Word art can
-allow writers to analyze their work (language use and frequency). For those who need
-visual representations of their work for publicity, word art
-can easily be created and used to liven up blog posts, create a vibrant background
-to a website or business card, or simply be a visual way to enjoy their work.
+Writers also benefit from new ways of looking at their literary works.
+Word art can allow writers to analyze their work for language use and
+frequency. As with anything, having a new perspective on something
+we're in the middle of can be incredibly informative and useful.
+For those writers who would like a visual representation of their
+work for publicity reasons, this application
+would allow them to easily create and use word art derived from
+their own work to liven up blog posts, create a vibrant background
+on a website or business card, or even create swag (book bags, posters, etc)
+in conjuntion with print-on-demand websites.
+
+And last, but not least, word art can simply be a visual way to enjoy a
+story or poem.
 
 ### Project Technologies/Techniques
 
