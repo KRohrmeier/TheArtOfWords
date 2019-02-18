@@ -77,6 +77,6 @@ Changes will be reflected here when/if applicable.
 * [Application Flow](#.md)
 * [Database Design](#.png)
 
-### [Project Plan](#.md)
+### [Project Plan](src/main/resources/TimeLog.md)
 
-### [Development Journal](#.md)
+### [Development Journal](DevelopmentJournal.md)
