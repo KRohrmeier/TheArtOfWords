@@ -1,8 +1,8 @@
 # Wireframes
 
-[home page](home_page.png)
+[home page](src/main/resources/home_page.png)
 
-[login page](login.png)
+[login page](src/main/resources/login.png)
 
-[users home page](user_home_page.png)
+[users home page](src/main/resources/user_home_page.png)
 
