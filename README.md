@@ -73,7 +73,7 @@ Changes will be reflected here when/if applicable.
 *forthcoming*
 
 * [User Stories](#.md)
-* [Screen Design](#.md)
+* [Screen Design](Wireframes.md)
 * [Application Flow](#.md)
 * [Database Design](#.png)
 
