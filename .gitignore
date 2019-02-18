@@ -53,3 +53,6 @@ fabric.properties
 # logs
 *.log
 logs/
+
+# ignoring the /idea
+.idea/
