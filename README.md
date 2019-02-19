@@ -63,8 +63,6 @@ Changes will be reflected here when/if applicable.
   * API
   * Hibernate Validation
   * Hibernate Search
-  * Project Lombok to eliminate boilerplate code like getters/setters/equals
-* Unit Testing
   * JUnit tests to achieve 80%+ code coverage
 * IDE: IntelliJ IDEA
 
