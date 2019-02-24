@@ -53,3 +53,10 @@ fabric.properties
 # logs
 *.log
 logs/
+
+hibernate.cfg.xml
+
+database.properties
+
+src/main/resources/database.properties
+src/test/resources/database.properties
