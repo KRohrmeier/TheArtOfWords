@@ -1,6 +1,6 @@
 # Journal
 
-[Time Log](src/main/resources/TimeLog.md)
+[Time Log](other/TimeLog.md)
 
 Oh, there'll be words, alright. I may have opinions. You've been warned.
 
