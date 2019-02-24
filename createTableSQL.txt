@@ -1,0 +1,18 @@
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(25) NOT NULL,
+  `last_name` varchar(30) DEFAULT NULL,
+  `user_name` varchar(15) NOT NULL,
+  `password` varchar(30) NOT NULL,
+  `email` varchar(35) NULL,
+  `genres` varchar(100) NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `user_user_name_uindex` (`user_name`)
+);
+
+
+insert into user (first_name, last_name, user_name, password, email, genres) VALUES ('Kat', 'Rohrmeier', 'kat', 'all_the_books', 'kkohler@madisoncollege.edu', 'sci-fi, weird, speculative, slip-stream, fantasy, nature, philosophy');
+insert into user (first_name, last_name, user_name, password, email, genres) VALUES ('Herta', 'Mueller', 'Herta', 'all_the_books', 'hmueller@buecher.de', 'modern, weird, slip-stream, nature, philosophy, history');
+insert into user (first_name, last_name, user_name, password, email, genres) VALUES ('Caetano', 'Rodriguez', 'Is it though?', 'all_the_books', 'anywhere@somewherewhere.com', 'poetry, nature, religion, metaphysics');
+insert into user (first_name, last_name, user_name, password, email, genres) VALUES ('Malik', 'Bendjelloul', 'Play it!', 'all_the_books', 'playit@yahoo.com', 'music, non-fiction, computing');
+insert into user (first_name, last_name, user_name, password, email, genres) VALUES ('Mosab Hassan', 'Yousef', 'Yousef', 'all_the_books', 'yousef@artmail.com', 'art, fantasy, history');
