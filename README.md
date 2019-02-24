@@ -70,11 +70,11 @@ Changes will be reflected here when/if applicable.
 
 *forthcoming*
 
-* [User Stories](User_Stories.md)
-* [Screen Design](Wireframes.md)
+* [User Stories](other/User_Stories.md)
+* [Screen Design](other/Wireframes.md)
 * [Application Flow](#.md)
 * [Database Design](#.png)
 
-### [Project Plan](src/main/resources/TimeLog.md)
+### [Project Plan](other/TimeLog.md)
 
 ### [Development Journal](DevelopmentJournal.md)
