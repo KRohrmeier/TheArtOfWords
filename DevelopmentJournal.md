@@ -25,3 +25,14 @@ in the project. Perhaps it will only be in the project.
 
 This has brought me to the realization that I don't know how we configured /
 created the data source in IntelliJ. Wish GitHub repos were searchable.
+
+## March 09
+
+Hours of debugging led to realization that the pom.xml file needs to have 
+a correct dependency version for `<artifactId>mysql-connector-java</artifactId>`. 
+Because if that's wrong you might not be able to connect to your database 
+and perform your tests. Now I know. And so do you.
+
+I also know how to create a stack overflow error. Essentially, it is an 
+endless loop of mirrored references. Decide beforehand in which class 
+you want your references to be shown - in the 
