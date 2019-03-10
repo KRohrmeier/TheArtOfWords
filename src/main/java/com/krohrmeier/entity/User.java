@@ -1,21 +1,24 @@
 package com.krohrmeier.entity;
 
+import com.krohrmeier.entity.Book;
+
+import java.util.List;
+
 /**
- * The type User.
+ * The class to represent a User of the Art of Words application.
  */
 public class User {
     private int id;
-    private String first_name;
-    private String last_name;
-    private String user_name;
+    private String firstName;
+    private String lastName;
+    private String userName;
     private String password;
     private String email;
     private String genres;
-
+    private List<Book> library;
 
     /**
      * Gets id.
-     *
      * @return the id
      */
     public int getId() {
@@ -24,61 +27,54 @@ public class User {
 
     /**
      * Gets first name.
-     *
      * @return the first name
      */
-    public String getFirst_name() {
-        return first_name;
+    public String getFirstName() {
+        return firstName;
     }
 
     /**
      * Sets first name.
-     *
-     * @param first_name the first name
+     * @param firstName the first name
      */
-    public void setFirst_name(String first_name) {
-        this.first_name = first_name;
+    public void setFirst_name(String firstName) {
+        this.firstName = firstName;
     }
 
     /**
      * Gets last name.
-     *
      * @return the last name
      */
-    public String getLast_name() {
-        return last_name;
+    public String getLastName() {
+        return lastName;
     }
 
     /**
      * Sets last name.
-     *
-     * @param last_name the last name
+     * @param lastName the last name
      */
-    public void setLast_name(String last_name) {
-        this.last_name = last_name;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     /**
      * Gets user name.
-     *
      * @return the user name
      */
-    public String getUser_name() {
-        return user_name;
+    public String getUserName() {
+        return userName;
     }
 
     /**
      * Sets user name.
-     *
-     * @param user_name the user name
+     * @param userName the user name
      */
-    public void setUser_name(String user_name) {
-        this.user_name = user_name;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     /**
      * Gets password.
-     *
      * @return the password
      */
     public String getPassword() {
@@ -87,7 +83,6 @@ public class User {
 
     /**
      * Sets password.
-     *
      * @param password the password
      */
     public void setPassword(String password) {
@@ -96,7 +91,6 @@ public class User {
 
     /**
      * Gets email.
-     *
      * @return the email
      */
     public String getEmail() {
@@ -105,7 +99,6 @@ public class User {
 
     /**
      * Sets email.
-     *
      * @param email the email
      */
     public void setEmail(String email) {
@@ -114,7 +107,6 @@ public class User {
 
     /**
      * Gets genres.
-     *
      * @return the genres
      */
     public String getGenres() {
@@ -123,10 +115,42 @@ public class User {
 
     /**
      * Sets genres.
-     *
      * @param genres the genres
      */
     public void setGenres(String genres) {
         this.genres = genres;
+    }
+
+
+    /**
+     * Gets library.
+     * @return the library
+     */
+    public List<Book> getLibrary() {
+        return library;
+    }
+
+    /**
+     * Sets library.
+     * @param library the library
+     */
+    public void setLibrary(List<Book> library) {
+        this.library = library;
+    }
+
+    /**
+     * Adds a book.
+     * @param book the book
+     */
+    public void addToLibrary (Book book) {
+        library.add(book);
+    }
+
+    /**
+     * Removes a book.
+     * @param book the book
+     */
+    public void removeFromLibrary (Book book) {
+        library.remove(book);
     }
 }
