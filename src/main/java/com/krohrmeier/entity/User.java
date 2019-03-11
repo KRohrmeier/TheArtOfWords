@@ -1,26 +1,79 @@
 package com.krohrmeier.entity;
 
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.*;
 import java.util.Set;
 
 /**
  * The class to represent a User of the Art of Words application.
  */
+@Entity(name = "User")
+@Table(name = "user")
 public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
+    @GenericGenerator(name = "native", strategy = "native")
     private int id;
+
+    @Column(name = "first_name")
     private String firstName;
+
+    @Column(name = "last_name")
     private String lastName;
+
+    @Column(name = "user_name")
     private String userName;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.PERSIST, orphanRemoval = true, fetch = FetchType.EAGER)
+    private Set<Literature> library;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.PERSIST, orphanRemoval = false, fetch = FetchType.EAGER)
+    private Set<Role> roles;
+
     private String password;
     private String email;
     private String genres;
-    private Set<Literature> library;
 
     /**
-     * Gets id.
+     * Instantiates a new User.
+     */
+    public User() {
+    }
+
+    /**
+     * Instantiates a new User.
+     *
+     * @param firstName the first name
+     * @param lastName  the last name
+     * @param userName  the user name
+     * @param password  the password
+     * @param email     the email
+     * @param genres    the genres
+     */
+    public User(String firstName, String lastName, String userName, String password, String email, String genres) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.userName = userName;
+        this.password = password;
+        this.email = email;
+        this.genres = genres;
+    }
+
+    /**
+     * Gets an id.
      * @return the id
      */
     public int getId() {
         return id;
+    }
+
+    /**
+     * Sets an id.
+     * @param id the id
+     */
+    public void setId(int id) {
+        this.id = id;
     }
 
     /**
@@ -119,6 +172,40 @@ public class User {
         this.genres = genres;
     }
 
+    /**
+     * Gets roles.
+     *
+     * @return roles the user roles
+     */
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    /**
+     * Sets roles.
+     *
+     * @param roles the roles
+     */
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
+    }
+
+    //TODO this is a restricted function - ensure it is accessible only to admin roles
+    /**
+     * Adds a role.
+     * @param role the role to add
+     */
+    public void addToRoles (Role role) {
+        roles.add(role);
+    }
+
+    /**
+     * Removes a role.
+     * @param role the role to remove
+     */
+    public void removeFromRoles (Role role) {
+        roles.remove(role);
+    }
 
     /**
      * Gets library.
@@ -155,10 +242,11 @@ public class User {
 //    CREATE TABLE `user` (
 //        `id` int(11) NOT NULL AUTO_INCREMENT,
 //        `first_name` varchar(25) NOT NULL,
-//        `last_name` varchar(25) NOT NULL,
+//        `last_name` varchar(25) NULL,
+//        `user_name` varchar(25) NOT NULL UNIQUE,
 //        'password' varchar(225) NOT NULL,
 //        'email' varchar(50) NOT NULL,
 //        'genres' varchar(100) NULL,
 //        PRIMARY KEY (`id`),
-//        UNIQUE KEY `author_id_uindex` (`id`)
-//        )
+//        UNIQUE KEY `user_id_uindex` (`id`)
+//        );
