@@ -1,6 +1,5 @@
 package com.krohrmeier.entity;
 
-import java.util.List;
 import java.util.Set;
 
 /**
