@@ -1,5 +1,6 @@
 package com.krohrmeier.persistence;
 
+import com.krohrmeier.entity.Literature;
 import com.krohrmeier.entity.User;
 import com.krohrmeier.test.util.Database;
 import org.apache.logging.log4j.LogManager;
@@ -13,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 /**
  */
-class BookDaoTest {
+class LiteratureDaoTest {
     private final Logger logger = LogManager.getLogger(this.getClass());
     GenericDao genericDao;
 
@@ -22,31 +23,31 @@ class BookDaoTest {
      */
     @BeforeEach
     void setUp() {
-        genericDao = new GenericDao(User.class);
+        genericDao = new GenericDao(Literature.class);
         Database database = Database.getInstance();
         database.runSQL("cleandb.sql");
     }
 
     /**
-     * Verify successful retrieval of a Book
+     * Verify successful retrieval of a Literature
      */
     @Test
     void getByIdSuccess() {}
 
     /**
-     * Verify successful insert of a Book
+     * Verify successful insert of a Literature
      */
     @Test
     void insertSuccess() {}
 
     /**
-     * Verify successful update of a Book
+     * Verify successful update of a Literature
      */
     @Test
     void updateSuccess() {}
 
     /**
-     * Verify successful delete of a Book
+     * Verify successful delete of a Literature
      */
     @Test
     void deleteSuccess() {}

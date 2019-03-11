@@ -1,4 +1,4 @@
 package com.krohrmeier.entity;
 
-public class Book {
+public class Role {
 }

@@ -1,8 +1,7 @@
 package com.krohrmeier.entity;
 
-import com.krohrmeier.entity.Book;
-
 import java.util.List;
+import java.util.Set;
 
 /**
  * The class to represent a User of the Art of Words application.
@@ -15,7 +14,7 @@ public class User {
     private String password;
     private String email;
     private String genres;
-    private List<Book> library;
+    private Set<Literature> library;
 
     /**
      * Gets id.
@@ -126,7 +125,7 @@ public class User {
      * Gets library.
      * @return the library
      */
-    public List<Book> getLibrary() {
+    public Set<Literature> getLibrary() {
         return library;
     }
 
@@ -134,23 +133,33 @@ public class User {
      * Sets library.
      * @param library the library
      */
-    public void setLibrary(List<Book> library) {
+    public void setLibrary(Set<Literature> library) {
         this.library = library;
     }
 
     /**
      * Adds a book.
-     * @param book the book
+     * @param lit the work of literature
      */
-    public void addToLibrary (Book book) {
-        library.add(book);
+    public void addToLibrary (Literature lit) {
+        library.add(lit);
     }
 
     /**
      * Removes a book.
-     * @param book the book
+     * @param lit the work of literature
      */
-    public void removeFromLibrary (Book book) {
-        library.remove(book);
+    public void removeFromLibrary (Literature lit) {
+        library.remove(lit);
     }
 }
+//    CREATE TABLE `user` (
+//        `id` int(11) NOT NULL AUTO_INCREMENT,
+//        `first_name` varchar(25) NOT NULL,
+//        `last_name` varchar(25) NOT NULL,
+//        'password' varchar(225) NOT NULL,
+//        'email' varchar(50) NOT NULL,
+//        'genres' varchar(100) NULL,
+//        PRIMARY KEY (`id`),
+//        UNIQUE KEY `author_id_uindex` (`id`)
+//        )

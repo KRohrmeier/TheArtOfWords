@@ -67,13 +67,13 @@ public class UserDaoTest {
      * Verifies delete user associated library succeeds.
      */
     @Test
-    void deleteAuthorAssociatedBookSuccess() {}
+    void deleteUserAssociatedLitSuccess() {}
 
     /**
      * Verifies insert with library succeeds.
      */
     @Test
-    void insertWithBookSuccess() {}
+    void insertWithLitSuccess() {}
 
     /**
      * Verifies get by property equal succeeds.
