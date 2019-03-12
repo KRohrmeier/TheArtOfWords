@@ -1,21 +1,67 @@
 package com.krohrmeier.entity;
 
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.*;
+import java.util.Set;
+
 /**
- * The type User.
+ * The class to represent a User of the Art of Words application.
  */
+@Entity(name = "User")
+@Table(name = "user")
 public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
+    @GenericGenerator(name = "native", strategy = "native")
     private int id;
-    private String first_name;
-    private String last_name;
-    private String user_name;
+
+    @Column(name = "first_name")
+    private String firstName;
+
+    @Column(name = "last_name")
+    private String lastName;
+
+    @Column(name = "user_name")
+    private String userName;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.PERSIST, orphanRemoval = true, fetch = FetchType.EAGER)
+    private Set<Literature> library;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.PERSIST, orphanRemoval = false, fetch = FetchType.EAGER)
+    private Set<Role> roles;
+
     private String password;
     private String email;
     private String genres;
 
+    /**
+     * Instantiates a new User.
+     */
+    public User() {
+    }
 
     /**
-     * Gets id.
+     * Instantiates a new User.
      *
+     * @param firstName the first name
+     * @param lastName  the last name
+     * @param userName  the user name
+     * @param password  the password
+     * @param email     the email
+     * @param genres    the genres
+     */
+    public User(String firstName, String lastName, String userName, String password, String email, String genres) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.userName = userName;
+        this.password = password;
+        this.email = email;
+        this.genres = genres;
+    }
+
+    /**
+     * Gets an id.
      * @return the id
      */
     public int getId() {
@@ -23,62 +69,63 @@ public class User {
     }
 
     /**
+     * Sets an id.
+     * @param id the id
+     */
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    /**
      * Gets first name.
-     *
      * @return the first name
      */
-    public String getFirst_name() {
-        return first_name;
+    public String getFirstName() {
+        return firstName;
     }
 
     /**
      * Sets first name.
-     *
-     * @param first_name the first name
+     * @param firstName the first name
      */
-    public void setFirst_name(String first_name) {
-        this.first_name = first_name;
+    public void setFirst_name(String firstName) {
+        this.firstName = firstName;
     }
 
     /**
      * Gets last name.
-     *
      * @return the last name
      */
-    public String getLast_name() {
-        return last_name;
+    public String getLastName() {
+        return lastName;
     }
 
     /**
      * Sets last name.
-     *
-     * @param last_name the last name
+     * @param lastName the last name
      */
-    public void setLast_name(String last_name) {
-        this.last_name = last_name;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     /**
      * Gets user name.
-     *
      * @return the user name
      */
-    public String getUser_name() {
-        return user_name;
+    public String getUserName() {
+        return userName;
     }
 
     /**
      * Sets user name.
-     *
-     * @param user_name the user name
+     * @param userName the user name
      */
-    public void setUser_name(String user_name) {
-        this.user_name = user_name;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     /**
      * Gets password.
-     *
      * @return the password
      */
     public String getPassword() {
@@ -87,7 +134,6 @@ public class User {
 
     /**
      * Sets password.
-     *
      * @param password the password
      */
     public void setPassword(String password) {
@@ -96,7 +142,6 @@ public class User {
 
     /**
      * Gets email.
-     *
      * @return the email
      */
     public String getEmail() {
@@ -105,7 +150,6 @@ public class User {
 
     /**
      * Sets email.
-     *
      * @param email the email
      */
     public void setEmail(String email) {
@@ -114,7 +158,6 @@ public class User {
 
     /**
      * Gets genres.
-     *
      * @return the genres
      */
     public String getGenres() {
@@ -123,10 +166,87 @@ public class User {
 
     /**
      * Sets genres.
-     *
      * @param genres the genres
      */
     public void setGenres(String genres) {
         this.genres = genres;
     }
+
+    /**
+     * Gets roles.
+     *
+     * @return roles the user roles
+     */
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    /**
+     * Sets roles.
+     *
+     * @param roles the roles
+     */
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
+    }
+
+    //TODO this is a restricted function - ensure it is accessible only to admin roles
+    /**
+     * Adds a role.
+     * @param role the role to add
+     */
+    public void addToRoles (Role role) {
+        roles.add(role);
+    }
+
+    /**
+     * Removes a role.
+     * @param role the role to remove
+     */
+    public void removeFromRoles (Role role) {
+        roles.remove(role);
+    }
+
+    /**
+     * Gets library.
+     * @return the library
+     */
+    public Set<Literature> getLibrary() {
+        return library;
+    }
+
+    /**
+     * Sets library.
+     * @param library the library
+     */
+    public void setLibrary(Set<Literature> library) {
+        this.library = library;
+    }
+
+    /**
+     * Adds a book.
+     * @param lit the work of literature
+     */
+    public void addToLibrary (Literature lit) {
+        library.add(lit);
+    }
+
+    /**
+     * Removes a book.
+     * @param lit the work of literature
+     */
+    public void removeFromLibrary (Literature lit) {
+        library.remove(lit);
+    }
 }
+//    CREATE TABLE `user` (
+//        `id` int(11) NOT NULL AUTO_INCREMENT,
+//        `first_name` varchar(25) NOT NULL,
+//        `last_name` varchar(25) NULL,
+//        `user_name` varchar(25) NOT NULL UNIQUE,
+//        'password' varchar(225) NOT NULL,
+//        'email' varchar(50) NOT NULL,
+//        'genres' varchar(100) NULL,
+//        PRIMARY KEY (`id`),
+//        UNIQUE KEY `user_id_uindex` (`id`)
+//        );
