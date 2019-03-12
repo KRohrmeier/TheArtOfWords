@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 
 /**
- * The type Author dao test.
+ * The type User dao test.
  */
 public class UserDaoTest {
     private final Logger logger = LogManager.getLogger(this.getClass());
@@ -36,6 +36,8 @@ public class UserDaoTest {
      */
     @Test
     void getByIdSuccess() {
+        User retrievedUser = (User)genericDao.getById(1);
+
     }
 
     /**
