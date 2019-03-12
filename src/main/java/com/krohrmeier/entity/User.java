@@ -3,6 +3,7 @@ package com.krohrmeier.entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.Objects;
 import java.util.Set;
 
 /**
@@ -238,7 +239,56 @@ public class User {
     public void removeFromLibrary (Literature lit) {
         library.remove(lit);
     }
+
+
+    public boolean equalsWithoutId(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return firstName.equals(user.firstName) &&
+                Objects.equals(lastName, user.lastName) &&
+                userName.equals(user.userName) &&
+                password.equals(user.password) &&
+                email.equals(user.email) &&
+                Objects.equals(genres, user.genres);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return id == user.id &&
+                firstName.equals(user.firstName) &&
+                Objects.equals(lastName, user.lastName) &&
+                userName.equals(user.userName) &&
+                password.equals(user.password) &&
+                email.equals(user.email) &&
+                Objects.equals(genres, user.genres);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, firstName, lastName, userName, password, email, genres);
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", userName='" + userName + '\'' +
+                ", roles=" + roles +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", genres='" + genres + '\'' +
+                '}';
+    }
 }
+
+
+
 //    CREATE TABLE `user` (
 //        `id` int(11) NOT NULL AUTO_INCREMENT,
 //        `first_name` varchar(25) NOT NULL,

@@ -37,7 +37,8 @@ public class UserDaoTest {
     @Test
     void getByIdSuccess() {
         User retrievedUser = (User)genericDao.getById(1);
-
+        User expectedUser = new User ("Kat", "Kohler", "kat", "PetuniaTomcatDoorway","kkohler@madisoncollege.edu", "sci-fi, fantasy, speculative, history");
+        assertTrue(expectedUser.equalsWithoutId(retrievedUser));
     }
 
     /**
