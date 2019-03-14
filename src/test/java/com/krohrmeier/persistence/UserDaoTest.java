@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 
 /**
- * The type Author dao test.
+ * The type User dao test.
  */
 public class UserDaoTest {
     private final Logger logger = LogManager.getLogger(this.getClass());
@@ -36,6 +36,9 @@ public class UserDaoTest {
      */
     @Test
     void getByIdSuccess() {
+        User actualUser = (User)genericDao.getById(1);
+        User expectedUser = new User("Kat", "Rohrmeier", "kat", "all_the_books", "kkohler@madisoncollege.edu", "sci-fi,weird,fantasy,nature,philosophy");
+        assertTrue(actualUser.equalsWithoutId(expectedUser));
     }
 
     /**
@@ -43,6 +46,10 @@ public class UserDaoTest {
      */
     @Test
     void getAllSuccess() {
+        int expectedLength = 5;
+        List<User> actualList = genericDao.getAll();
+        int actualLength = actualList.size();
+        assertTrue(expectedLength == actualLength);
     }
 
     /**

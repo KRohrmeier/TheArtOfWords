@@ -3,6 +3,7 @@ package com.krohrmeier.entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.Objects;
 import java.util.Set;
 
 /**
@@ -25,11 +26,11 @@ public class User {
     @Column(name = "user_name")
     private String userName;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.PERSIST, orphanRemoval = true, fetch = FetchType.EAGER)
-    private Set<Literature> library;
-
-    @OneToMany(mappedBy = "user", cascade = CascadeType.PERSIST, orphanRemoval = false, fetch = FetchType.EAGER)
-    private Set<Role> roles;
+//    @OneToMany(mappedBy = "user", cascade = CascadeType.PERSIST, orphanRemoval = true, fetch = FetchType.EAGER)
+//    private Set<Literature> library;
+//
+//    @OneToMany(mappedBy = "user", cascade = CascadeType.PERSIST, orphanRemoval = false, fetch = FetchType.EAGER)
+//    private Set<Role> roles;
 
     private String password;
     private String email;
@@ -172,73 +173,124 @@ public class User {
         this.genres = genres;
     }
 
+
+    //TODO put roles and library back in once they are created and "hooked up" - test User alone first
     /**
      * Gets roles.
      *
      * @return roles the user roles
      */
-    public Set<Role> getRoles() {
-        return roles;
-    }
+//    public Set<Role> getRoles() {
+//        return roles;
+//    }
 
     /**
      * Sets roles.
      *
      * @param roles the roles
      */
-    public void setRoles(Set<Role> roles) {
-        this.roles = roles;
-    }
+//    public void setRoles(Set<Role> roles) {
+//        this.roles = roles;
+//    }
 
-    //TODO this is a restricted function - ensure it is accessible only to admin roles
+    //TODO this is a restricted function - ensure it is accessible only to admin roles - week 7 stuff will help
     /**
      * Adds a role.
      * @param role the role to add
      */
-    public void addToRoles (Role role) {
-        roles.add(role);
-    }
+//    public void addToRoles (Role role) {
+//        roles.add(role);
+//    }
 
     /**
      * Removes a role.
      * @param role the role to remove
      */
-    public void removeFromRoles (Role role) {
-        roles.remove(role);
-    }
+//    public void removeFromRoles (Role role) {
+//        roles.remove(role);
+//    }
 
     /**
      * Gets library.
      * @return the library
      */
-    public Set<Literature> getLibrary() {
-        return library;
-    }
+//    public Set<Literature> getLibrary() {
+//        return library;
+//    }
 
     /**
      * Sets library.
      * @param library the library
      */
-    public void setLibrary(Set<Literature> library) {
-        this.library = library;
-    }
+//    public void setLibrary(Set<Literature> library) {
+//        this.library = library;
+//    }
 
     /**
      * Adds a book.
      * @param lit the work of literature
      */
-    public void addToLibrary (Literature lit) {
-        library.add(lit);
-    }
+//    public void addToLibrary (Literature lit) {
+//        library.add(lit);
+//    }
 
     /**
      * Removes a book.
      * @param lit the work of literature
      */
-    public void removeFromLibrary (Literature lit) {
-        library.remove(lit);
+//    public void removeFromLibrary (Literature lit) {
+//        library.remove(lit);
+//    }
+
+
+    public boolean equalsWithoutId(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return firstName.equals(user.firstName) &&
+                lastName.equals(user.lastName) &&
+                userName.equals(user.userName) &&
+                password.equals(user.password) &&
+                email.equals(user.email) &&
+                genres.equals(user.genres);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return id == user.id &&
+                firstName.equals(user.firstName) &&
+                lastName.equals(user.lastName) &&
+                userName.equals(user.userName) &&
+                password.equals(user.password) &&
+                email.equals(user.email) &&
+                genres.equals(user.genres);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, firstName, lastName, userName, password, email, genres);
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", userName='" + userName + '\'' +
+//                ", roles=" + roles +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", genres='" + genres + '\'' +
+                '}';
     }
 }
+
+
+
 //    CREATE TABLE `user` (
 //        `id` int(11) NOT NULL AUTO_INCREMENT,
 //        `first_name` varchar(25) NOT NULL,
