@@ -248,11 +248,11 @@ public class User {
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
         return firstName.equals(user.firstName) &&
-                Objects.equals(lastName, user.lastName) &&
+                lastName.equals(user.lastName) &&
                 userName.equals(user.userName) &&
                 password.equals(user.password) &&
                 email.equals(user.email) &&
-                Objects.equals(genres, user.genres);
+                genres.equals(user.genres);
     }
 
     @Override
@@ -262,11 +262,11 @@ public class User {
         User user = (User) o;
         return id == user.id &&
                 firstName.equals(user.firstName) &&
-                Objects.equals(lastName, user.lastName) &&
+                lastName.equals(user.lastName) &&
                 userName.equals(user.userName) &&
                 password.equals(user.password) &&
                 email.equals(user.email) &&
-                Objects.equals(genres, user.genres);
+                genres.equals(user.genres);
     }
 
     @Override
