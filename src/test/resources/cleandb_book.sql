@@ -1,0 +1,4 @@
+truncate table book;
+SET FOREIGN_KEY_CHECKS=0;
+ALTER TABLE book AUTO_INCREMENT = 0;
+INSERT INTO `book` VALUES (1,'Head First Java, 2nd Edition','Kathy Sierra','978-0596009205',2005),(2,'Beginning Hibernate','Joseph Ottinger','978-1-4842-2319-2',2016),(3,'Java: A Beginner’s Guide (Sixth Edition)','Herbert Schilt','978-0071809252',2014),(4,'A Stranger In Olondria', 'Sofia Samatar', '978-1-61873-062-6', 2013), (5,'Jagannath (stories)','Karin Tidbeck', '978-0-9857904-0-0', 2011), (6,'Red Spikes', 'Margo Lanagan', '978-0-375-84304-4', 2006), (7, 'Darktown Follies', 'Amaud Jamaul Johnson', '978-1-936796-39-4', 2013);

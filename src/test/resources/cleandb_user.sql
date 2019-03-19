@@ -1,0 +1,4 @@
+truncate table user;
+SET FOREIGN_KEY_CHECKS=0;
+ALTER TABLE user AUTO_INCREMENT = 0;
+INSERT INTO `user` VALUES (1,'Coraline Ada','Ehmke','Ada','all_the_books','cehmke@madisoncollege.edu','sci-fi,weird,fantasy,nature,philosophy'),(2,'Herta','Mueller','Herta','all_the_books','mueller@buecher.de','fiction,poetry,nature,religion'),(3,'Caetano','Rodriguez','Is it though?','all_the_books','anywhere@somewherewhere.com','poetry,nature,religion,metaphysics'),(4,'Malik','Bendjelloul','Play it!','all_the_books','playit@yahoo.com','music,non-fiction,computing'),(5,'Mosab Hassan','Yousef','Yousef','all_the_books','yousef@artmail.com','art,fantasy,history'),(6,'Hedy','Lamarr','Hedy','all_the_books','hedy@gmail.com','sci-fi,science,nature,electronics'),(7,'Caetano','Lopez','lolo','all_the_books','lolo@buecher.de', 'fantasy,ancient history');

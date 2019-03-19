@@ -26,9 +26,9 @@ public class User {
     @Column(name = "user_name")
     private String userName;
 
-//    @OneToMany(mappedBy = "user", cascade = CascadeType.PERSIST, orphanRemoval = true, fetch = FetchType.EAGER)
-//    private Set<Literature> library;
-//
+    @OneToMany(mappedBy = "user", cascade = CascadeType.PERSIST, orphanRemoval = true, fetch = FetchType.EAGER)
+    private Set<Book> library;
+
 //    @OneToMany(mappedBy = "user", cascade = CascadeType.PERSIST, orphanRemoval = false, fetch = FetchType.EAGER)
 //    private Set<Role> roles;
 
@@ -89,7 +89,7 @@ public class User {
      * Sets first name.
      * @param firstName the first name
      */
-    public void setFirst_name(String firstName) {
+    public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
@@ -214,33 +214,33 @@ public class User {
      * Gets library.
      * @return the library
      */
-//    public Set<Literature> getLibrary() {
-//        return library;
-//    }
+    public Set<Book> getLibrary() {
+        return library;
+    }
 
     /**
      * Sets library.
      * @param library the library
      */
-//    public void setLibrary(Set<Literature> library) {
-//        this.library = library;
-//    }
+    public void setLibrary(Set<Book> library) {
+        this.library = library;
+    }
 
     /**
      * Adds a book.
-     * @param lit the work of literature
+     * @param book the work of literature to add to the library
      */
-//    public void addToLibrary (Literature lit) {
-//        library.add(lit);
-//    }
+    public void addToLibrary (Book book) {
+        library.add(book);
+    }
 
     /**
      * Removes a book.
-     * @param lit the work of literature
+     * @param book the work of literature to remove from the library
      */
-//    public void removeFromLibrary (Literature lit) {
-//        library.remove(lit);
-//    }
+    public void removeFromLibrary (Book book) {
+        library.remove(book);
+    }
 
 
     public boolean equalsWithoutId(Object o) {
