@@ -18,6 +18,10 @@ public class Book {
     private String author;
     private String isbn;
 
+//    @ManyToOne
+//    @JoinColumn(name = "user_id", foreignKey = @ForeignKey(name = "book_user_id_fk"))
+//    private User user;
+
     public Book() {
     }
 
@@ -56,7 +60,7 @@ public class Book {
         return author;
     }
 
-    public void setAuthorId(String author) {
+    public void setAuthor(String author) {
         this.author = author;
     }
 
@@ -75,6 +79,14 @@ public class Book {
     public void setPublicationYear(int publicationYear) {
         this.publicationYear = publicationYear;
     }
+
+//    public User getUser() {
+//        return user;
+//    }
+//
+//    public void setUser(User user) {
+//        this.user = user;
+//    }
 
     public boolean equalsWithoutId(Object o) {
         if (this == o) return true;
@@ -105,7 +117,7 @@ public class Book {
 
     @Override
     public String toString() {
-        return "Literature{" +
+        return "Book{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", author=" + author +
@@ -123,5 +135,5 @@ public class Book {
 //        PRIMARY KEY (`id`),
 //        UNIQUE KEY `book_id_uindex` (`id`),
 //        UNIQUE KEY `book_isbn_uindex` (`isbn`),
-//        CONSTRAINT `literature_author_id_fk` FOREIGN KEY (`author_id`) REFERENCES `author` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+//        CONSTRAINT `book_author_id_fk` FOREIGN KEY (`author_id`) REFERENCES `author` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 //        );

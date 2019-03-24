@@ -85,7 +85,7 @@ public class UserDaoTest {
         User newUser = new User("Ada", "Lovelace", "AdaLove", "all_the_books", "love@peacemail.com", "science,nature,electronics");
         Set<Book> newLibrary = new HashSet<>();
 
-        newLibrary.add("My Book", "Some Author", "isbn", 2019);
+
     }
 
     /**

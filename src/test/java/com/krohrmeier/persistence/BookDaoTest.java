@@ -1,6 +1,7 @@
 package com.krohrmeier.persistence;
 
 import com.krohrmeier.entity.Book;
+import com.krohrmeier.entity.User;
 import com.krohrmeier.test.util.Database;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -32,6 +33,7 @@ class BookDaoTest {
      */
     @Test
     void getByIdSuccess() {
+        //User user = new User("Coraline Ada", "Ehmke", "MEhmke", "all_the_books", "cehmke@madisoncollege.edu", "sci-fi,weird,fantasy,nature,philosophy");
         Book expectedBook = new Book(6,"Red Spikes", "Margo Lanagan", "978-0-375-84304-4", 2006);
         Book actualBook = (Book) genericDao.getById(6);
         logger.info("BookDaoTest - getByIdSuccess: actual book = {}", actualBook);
